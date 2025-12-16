@@ -2070,7 +2070,7 @@
 					"name": "constraint",
 					"item": [
 						{
-							"name": "add-timeslot Copy",
+							"name": "add-con",
 							"id": "47645687-3f88a718-c4b4-4d50-900f-0e8a8adcb627",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -2123,7 +2123,7 @@
 							"response": []
 						},
 						{
-							"name": "delete-timeslot Copy",
+							"name": "delete-con",
 							"id": "47645687-ea2c93de-759c-42c0-ab93-80f5dccaff6d",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
