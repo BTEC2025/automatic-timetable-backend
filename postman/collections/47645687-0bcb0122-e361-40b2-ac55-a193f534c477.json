@@ -1189,7 +1189,7 @@
 							"response": []
 						},
 						{
-							"name": "get-room Copy",
+							"name": "get-subject",
 							"id": "47645687-2a7d2c41-df37-4f3e-92a0-1e3ead964358",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
