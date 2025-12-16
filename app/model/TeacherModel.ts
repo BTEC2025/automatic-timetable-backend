@@ -7,6 +7,7 @@ export interface ITeacher extends Document {
     teacher_name: string;
     department?: mongoose.Types.ObjectId;
     role: role;
+    max_hours_per_week?: number;
 }
 
 const TeacherSchema = new Schema<ITeacher>({
@@ -18,6 +19,7 @@ const TeacherSchema = new Schema<ITeacher>({
         enum: ['leader', 'teacher'],
         default: 'teacher',
     },
+    max_hours_per_week: { type: Number },
 }, { timestamps: true });
 
 

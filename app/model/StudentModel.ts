@@ -2,15 +2,13 @@ import mongoose, { Schema, Document, Types } from 'mongoose';
 
 export interface IStudent extends Document {
   student_id: string;
-  firstName: string;
-  lastName: string;
+  student_name: string;
   groupId: Types.ObjectId;
 }
 
 const studentSchema = new Schema<IStudent>({
   student_id: { type: String, required: true, unique: true },
-  firstName: { type: String, required: true },
-  lastName: { type: String, required: true },
+  student_name: { type: String, required: true },
   groupId: { type: Schema.Types.ObjectId, ref: 'StudentGroups', required: true },
 }, { timestamps: true });
 

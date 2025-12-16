@@ -1,9 +1,8 @@
-// /api/auth/login/route.ts
 import dbConnect from "@/lib/mongodb";
-import Student from "../../../model/StudentModel";
-import User from "../../../model/UserModel";
+import User from "@/app/model/UserModel";
+import Student from "@/app/model/StudentModel";
 import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
+import jwt, { Secret } from "jsonwebtoken";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
@@ -50,30 +49,31 @@ export async function POST(req: Request) {
         );
 
         const response = NextResponse.json({
-            success: true, token,
+            success: true,
+            token,
             user: {
-                id: user._id,
+                id: user._id.toString(),
                 username: user.username,
-                name: user.name || user.st_name,
-                role: user.role ?? "student"
+                role: user.role,
+                status: user.status,
+                studentId: user.studentId ? user.studentId.toString() : null,
+                teacherId: user.teacherId ? user.teacherId.toString() : null
             }
         });
 
-        // Secure cookie
         response.cookies.set("authToken", token, {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production",
             sameSite: "strict",
             path: "/",
-            maxAge: 60 * 60 * 24 // 1 day
+            maxAge: 60 * 60 * 24
         });
 
         return response;
-
     } catch (err) {
         console.error("LOGIN ERROR:", err);
         return NextResponse.json(
-            { success: false, message: "Server Error" },
+            { success: false, message: "Server error" },
             { status: 500 }
         );
     }
