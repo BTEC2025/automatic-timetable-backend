@@ -162,3 +162,56 @@ export async function POST(req: Request) {
         return jsonError("Internal Server Error", 500);
     }
 }
+
+export async function DELETE(req: Request) {
+    try {
+        await dbConnect();
+
+        const authHeader = req.headers.get('authorization');
+        if (!authHeader) {
+            return NextResponse.json({ success: false, message: 'Unauthorized' }, { status: 401 });
+        }
+
+        const token = authHeader.replace('Bearer ', '');
+        const decoded = jwt.verify(token, JWT_SECRET) as any;
+
+        if (!decoded || decoded.role !== 'admin') {
+            return NextResponse.json({ success: false, message: 'Forbidden' }, { status: 403 });
+        }
+
+        const { searchParams } = new URL(req.url);
+        const userId = searchParams.get("id");
+
+        if (!userId) {
+            return jsonError("User id is required", 400);
+        }
+
+        const user = await User.findById(userId);
+        if (!user) {
+            return jsonError("User not found", 404);
+        }
+
+        if (user.status === "inactive") {
+            return NextResponse.json({
+                success: true,
+                message: "User already inactive"
+            });
+        }
+
+        user.status = "inactive";
+        await user.save();
+
+        return NextResponse.json({
+            success: true,
+            message: "User marked as inactive",
+            data: {
+                id: user._id.toString(),
+                status: user.status
+            }
+        });
+    } catch (err) {
+        console.error("DELETE USER ERROR:", err);
+        return jsonError("Internal Server Error", 500);
+    }
+}
+
