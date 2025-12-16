@@ -2166,7 +2166,7 @@
 							"response": []
 						},
 						{
-							"name": "edit-timeslot Copy",
+							"name": "edit-con",
 							"id": "47645687-bd52f4d3-3dbc-4e98-b518-0e0cc5a659b9",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -2220,7 +2220,7 @@
 							"response": []
 						},
 						{
-							"name": "get-timeslot Copy",
+							"name": "get-con",
 							"id": "47645687-d03fd93f-87e2-4857-a4ef-ebdc2acbe37a",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
