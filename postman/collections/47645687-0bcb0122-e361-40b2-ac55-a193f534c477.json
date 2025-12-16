@@ -516,7 +516,7 @@
 					"response": []
 				},
 				{
-					"name": "delete-dep Copy",
+					"name": "delete-register",
 					"id": "47645687-64d8c95a-423b-4de7-875e-0264063acb4f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -559,7 +559,7 @@
 					"response": []
 				},
 				{
-					"name": "edit-dep Copy",
+					"name": "edit-register",
 					"id": "47645687-27d18028-e893-4308-910a-e5ad7d1af097",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
