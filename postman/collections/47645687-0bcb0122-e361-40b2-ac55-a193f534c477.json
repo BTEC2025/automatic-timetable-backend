@@ -1342,6 +1342,193 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "add-std-group Copy 2",
+							"id": "47645687-b8f286dc-4216-4b00-a7fe-25cceaed860d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{vault:admin02}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"department_name\": \"IT\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/student-group",
+									"protocol": "https",
+									"host": [
+										"automatic-timetable-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"admin",
+										"student-group"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete-std-group Copy 2",
+							"id": "47645687-48044fd4-b3f5-417d-bf97-353e7c238a10",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{vault:admin02}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/student-group?id=",
+									"protocol": "https",
+									"host": [
+										"automatic-timetable-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"admin",
+										"student-group"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit-std-group Copy 2",
+							"id": "47645687-090de3a7-9957-44b0-a077-46071474ee9c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{vault:admin02}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"department_name\": \"Information Technology\"\r\n}"
+								},
+								"url": {
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/student-group?id=6940f89eb468acd8132194e9",
+									"protocol": "https",
+									"host": [
+										"automatic-timetable-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"admin",
+										"student-group"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "6940f89eb468acd8132194e9"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get-std-group Copy 2",
+							"id": "47645687-251b1d66-4134-4d5e-9c25-b0e5884ccf94",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{vault:admin02}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/student-group",
+									"protocol": "https",
+									"host": [
+										"automatic-timetable-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"admin",
+										"student-group"
+									]
+								}
+							},
+							"response": []
 						}
 					],
 					"id": "47645687-1661ef87-e879-45d0-a1e6-3cad41713fa7"
