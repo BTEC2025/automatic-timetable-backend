@@ -2313,7 +2313,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "get-list",
 					"id": "47645687-c64eee93-9507-42fd-a2ee-92d17eb9325f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
