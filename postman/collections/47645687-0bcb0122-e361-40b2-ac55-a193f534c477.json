@@ -942,7 +942,7 @@
 							"response": []
 						},
 						{
-							"name": "edit-room Copy",
+							"name": "edit-std-group",
 							"id": "47645687-dc0c3e4e-0d2b-4a41-8d89-fb851c220be9",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -996,7 +996,7 @@
 							"response": []
 						},
 						{
-							"name": "get-room Copy",
+							"name": "get-std-group",
 							"id": "47645687-8bd06313-aa49-488e-85c4-2f899fc3afdc",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
