@@ -1039,7 +1039,7 @@
 					"name": "subject",
 					"item": [
 						{
-							"name": "add-room Copy",
+							"name": "add-subject",
 							"id": "47645687-ae65b411-b473-494b-8121-d5aa1ae9ff30",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
