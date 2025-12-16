@@ -846,7 +846,7 @@
 					"name": "student-group",
 					"item": [
 						{
-							"name": "add-room Copy",
+							"name": "add-std-group",
 							"id": "47645687-32302552-223f-4e65-91f6-a2762b8a2a93",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
