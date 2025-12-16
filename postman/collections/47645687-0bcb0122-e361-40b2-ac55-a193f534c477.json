@@ -613,7 +613,7 @@
 					"response": []
 				},
 				{
-					"name": "get-dep Copy",
+					"name": "get-register",
 					"id": "47645687-a76c23c1-abed-4581-833c-ef80502340fe",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
