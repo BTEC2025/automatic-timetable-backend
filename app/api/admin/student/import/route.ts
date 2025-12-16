@@ -4,8 +4,8 @@ import Papa from "papaparse";
 import * as XLSX from "xlsx";
 import bcrypt from "bcryptjs";
 import dbConnect from "@/lib/mongodb";
-import Teacher from "@/app/model/TeacherModel";
-import Department from "@/app/model/DepartmentModel";
+import Student from "@/app/model/StudentModel";
+import StudentGroup from "@/app/model/StudentGroupsModel";
 import User from "@/app/model/UserModel";
 
 const JWT_SECRET = process.env.JWT_SECRET || "";
@@ -16,24 +16,18 @@ if (!JWT_SECRET) {
 
 type Row = Record<string, unknown>;
 
-const CSV_MIME_TYPES = new Set([
-    "text/csv",
-    "application/vnd.ms-excel",
-    "text/plain"
-]);
-
+const CSV_MIME_TYPES = new Set(["text/csv", "application/vnd.ms-excel", "text/plain"]);
 const XLSX_MIME_TYPES = new Set([
     "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
     "application/vnd.ms-excel"
 ]);
 
 const FIELD_ALIASES = {
-    teacherId: ["teacher_id", "รหัสครู", "รหัสอาจารย์"],
-    teacherName: ["teacher_name", "ชื่ออาจารย์", "ชื่อครู"],
-    role: ["role", "ตำแหน่ง", "บทบาท"],
+    studentId: ["student_id", "รหัสนักศึกษา", "studentid"],
+    studentName: ["student_name", "ชื่อนักศึกษา", "name"],
+    groupId: ["group_id", "รหัสกลุ่ม", "classroom"],
     username: ["username", "user", "บัญชีผู้ใช้"],
-    password: ["password", "รหัสผ่าน"],
-    department: ["department", "แผนก", "ภาควิชา"]
+    password: ["password", "รหัสผ่าน"]
 };
 
 function jsonError(message: string, status: number) {
@@ -89,9 +83,7 @@ function pick(row: Row, keys: string[]) {
         if (direct !== undefined && direct !== null && `${direct}`.trim() !== "") {
             return `${direct}`.trim();
         }
-        const normalizedKey = Object.keys(row).find(
-            (k) => normalizeKey(k) === normalizeKey(key)
-        );
+        const normalizedKey = Object.keys(row).find((k) => normalizeKey(k) === normalizeKey(key));
         if (normalizedKey) {
             const value = row[normalizedKey];
             if (value !== undefined && value !== null && `${value}`.trim() !== "") {
@@ -119,20 +111,16 @@ export async function POST(req: Request) {
             return jsonError("File field is required", 400);
         }
 
-        const arrayBuffer = await file.arrayBuffer();
-        const buffer = Buffer.from(arrayBuffer);
+        const buffer = Buffer.from(await file.arrayBuffer());
         const mime = file.type;
         const extension = file.name.split(".").pop()?.toLowerCase();
 
         let rows: Row[] = [];
+
         try {
             if (CSV_MIME_TYPES.has(mime) || extension === "csv") {
                 rows = parseCSV(buffer);
-            } else if (
-                XLSX_MIME_TYPES.has(mime) ||
-                extension === "xlsx" ||
-                extension === "xls"
-            ) {
+            } else if (XLSX_MIME_TYPES.has(mime) || extension === "xlsx" || extension === "xls") {
                 rows = parseXLSX(buffer);
             } else {
                 return jsonError("Unsupported file format. Please upload CSV or XLSX", 400);
@@ -145,88 +133,82 @@ export async function POST(req: Request) {
             return jsonError("File has no rows", 400);
         }
 
-        const teacherIds = rows.map((row) => pick(row, FIELD_ALIASES.teacherId)).filter(Boolean);
+        const studentIds = rows.map((row) => pick(row, FIELD_ALIASES.studentId)).filter(Boolean);
         const usernames = rows.map((row) => pick(row, FIELD_ALIASES.username)).filter(Boolean);
+        const groupCodes = Array.from(
+            new Set(rows.map((row) => pick(row, FIELD_ALIASES.groupId)).filter(Boolean))
+        );
 
-        const [existingTeachers, existingUsers, departments] = await Promise.all([
-            Teacher.find({ teacher_id: { $in: teacherIds } }).select("teacher_id").lean(),
+        const [existingStudents, existingUsers, groups] = await Promise.all([
+            Student.find({ student_id: { $in: studentIds } }).select("student_id").lean(),
             User.find({ username: { $in: usernames } }).select("username").lean(),
-            Department.find().select("_id department_name").lean()
+            StudentGroup.find({ group_id: { $in: groupCodes } }).select("_id group_id").lean()
         ]);
 
-        const existingTeacherSet = new Set(existingTeachers.map((t) => t.teacher_id));
+        const existingStudentSet = new Set(existingStudents.map((s) => s.student_id));
         const existingUsernameSet = new Set(existingUsers.map((u) => u.username));
-        const departmentMap = new Map(
-            departments.map((dep) => [normalize(dep.department_name).toLowerCase(), dep._id.toString()])
-        );
+        const groupMap = new Map(groups.map((group) => [group.group_id, group._id.toString()]));
 
         const result = {
             addedCount: 0,
             failedCount: 0,
-            errors: [] as Array<{ row?: number; reason: string }>
+            errors: [] as Array<{ row: number; reason: string }>
         };
 
         for (let index = 0; index < rows.length; index += 1) {
             const row = rows[index];
-            let createdTeacherId: string | null = null;
+            let createdStudentId: string | null = null;
             try {
-                const teacherId = pick(row, FIELD_ALIASES.teacherId);
-                const teacherName = pick(row, FIELD_ALIASES.teacherName);
-                const roleRaw = pick(row, FIELD_ALIASES.role).toLowerCase();
-                const role: "leader" | "teacher" =
-                    roleRaw === "leader" || roleRaw === "หัวหน้า" ? "leader" : "teacher";
+                const studentId = pick(row, FIELD_ALIASES.studentId);
+                const studentName = pick(row, FIELD_ALIASES.studentName);
+                const groupCode = pick(row, FIELD_ALIASES.groupId);
                 const username = pick(row, FIELD_ALIASES.username);
                 const password = pick(row, FIELD_ALIASES.password);
-                const departmentName = pick(row, FIELD_ALIASES.department);
-                const departmentId =
-                    departmentName && departmentName.trim()
-                        ? departmentMap.get(normalizeKey(departmentName))
-                        : undefined;
 
-                if (!teacherId || !teacherName) {
-                    throw new Error("teacher_id and teacher_name are required");
+                if (!studentId || !studentName || !groupCode) {
+                    throw new Error("student_id, student_name, and group_id are required");
                 }
 
                 if (!username || !password) {
                     throw new Error("username and password are required");
                 }
 
-                if (existingTeacherSet.has(teacherId)) {
-                    throw new Error(`Teacher ${teacherId} already exists`);
+                if (existingStudentSet.has(studentId)) {
+                    throw new Error(`Student ${studentId} already exists`);
                 }
 
                 if (existingUsernameSet.has(username)) {
                     throw new Error(`Username ${username} already exists`);
                 }
 
-                if (departmentName && departmentName.trim() && !departmentId) {
-                    throw new Error(`Department not found (${departmentName})`);
+                const groupObjectId = groupMap.get(groupCode);
+                if (!groupObjectId) {
+                    throw new Error(`Group ${groupCode} not found`);
                 }
 
-                const createdTeacher = await Teacher.create({
-                    teacher_id: teacherId,
-                    teacher_name: teacherName,
-                    role,
-                    department: departmentId
+                const student = await Student.create({
+                    student_id: studentId,
+                    student_name: studentName,
+                    groupId: groupObjectId
                 });
-                createdTeacherId = createdTeacher._id.toString();
+                createdStudentId = student._id.toString();
 
                 const passwordHash = await bcrypt.hash(password, 10);
 
                 await User.create({
                     username,
                     passwordHash,
-                    role: "teacher",
-                    teacherId: createdTeacher._id,
+                    role: "student",
+                    studentId: student._id,
                     status: "active"
                 });
 
-                existingTeacherSet.add(teacherId);
+                existingStudentSet.add(studentId);
                 existingUsernameSet.add(username);
                 result.addedCount += 1;
             } catch (err) {
-                if (typeof createdTeacherId === "string") {
-                    await Teacher.findByIdAndDelete(createdTeacherId).catch(() => null);
+                if (createdStudentId) {
+                    await Student.findByIdAndDelete(createdStudentId).catch(() => null);
                 }
                 result.failedCount += 1;
                 result.errors.push({
@@ -236,12 +218,9 @@ export async function POST(req: Request) {
             }
         }
 
-        return NextResponse.json({
-            success: true,
-            data: result
-        });
+        return NextResponse.json({ success: true, data: result });
     } catch (err) {
-        console.error("IMPORT TEACHER ERROR:", err);
+        console.error("IMPORT STUDENT ERROR:", err);
         if (err instanceof jwt.JsonWebTokenError) {
             return jsonError("Invalid token", 401);
         }

@@ -17,4 +17,4 @@ const ScheduleSchema = new Schema({
     room_id: { type: String, ref: 'Room', required: true },
 });
 
-export default mongoose.model('Schedule', ScheduleSchema) || mongoose.model<ISchedule>('Schedule', ScheduleSchema);
+export default mongoose.models.Schedule || mongoose.model<ISchedule>('Schedule', ScheduleSchema);
