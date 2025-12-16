@@ -69,7 +69,7 @@ export async function GET(req: Request) {
         const groups = await StudentGroup.find(query)
             .populate("department", "department_name")
             .populate("yearlevel", "level_name")
-            .populate("advisor", "teacher_name")
+            .populate("teacher", "teacher_name")
             .sort({ group_id: 1 });
 
         return NextResponse.json({
