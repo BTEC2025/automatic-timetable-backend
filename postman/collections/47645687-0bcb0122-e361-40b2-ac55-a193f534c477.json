@@ -706,7 +706,7 @@
 							"response": []
 						},
 						{
-							"name": "delete-register Copy",
+							"name": "delete-room",
 							"id": "47645687-73599605-cf0e-484e-b0e4-35c8f96adfe2",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
