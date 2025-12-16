@@ -1988,8 +1988,21 @@
 			"id": "47645687-db8574ff-a466-40ae-9449-b6726aff1428"
 		},
 		{
-			"name": "New Folder",
-			"item": [],
+			"name": "student",
+			"item": [
+				{
+					"name": "New Request",
+					"id": "47645687-24d6f02d-82c5-400b-8641-2cece60b6466",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
 			"id": "47645687-58aff347-e814-4d19-843d-5872bbb81fa8"
 		}
 	]
