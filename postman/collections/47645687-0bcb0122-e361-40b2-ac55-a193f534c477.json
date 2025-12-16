@@ -899,7 +899,7 @@
 							"response": []
 						},
 						{
-							"name": "delete-room Copy",
+							"name": "delete-std-group",
 							"id": "47645687-40df72cd-8c08-47e5-b354-6db1a2e9bb22",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
