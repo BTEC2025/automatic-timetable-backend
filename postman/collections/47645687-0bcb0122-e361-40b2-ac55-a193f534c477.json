@@ -463,7 +463,7 @@
 			"name": "register",
 			"item": [
 				{
-					"name": "add-dep Copy",
+					"name": "add-register",
 					"id": "47645687-39647ce7-4759-4747-b46e-40b382b2c768",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
