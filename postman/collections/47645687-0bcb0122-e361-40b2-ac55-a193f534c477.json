@@ -1976,43 +1976,43 @@
 						}
 					],
 					"id": "47645687-8f35030f-807a-49b2-a359-c83521a2e441"
+				},
+				{
+					"name": "student",
+					"item": [
+						{
+							"name": "import",
+							"id": "47645687-24d6f02d-82c5-400b-8641-2cece60b6466",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/student/import",
+									"protocol": "https",
+									"host": [
+										"automatic-timetable-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"admin",
+										"student",
+										"import"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "47645687-58aff347-e814-4d19-843d-5872bbb81fa8"
 				}
 			],
 			"id": "47645687-db8574ff-a466-40ae-9449-b6726aff1428"
-		},
-		{
-			"name": "student",
-			"item": [
-				{
-					"name": "import",
-					"id": "47645687-24d6f02d-82c5-400b-8641-2cece60b6466",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/student/import",
-							"protocol": "https",
-							"host": [
-								"automatic-timetable-backend-production",
-								"up",
-								"railway",
-								"app"
-							],
-							"path": [
-								"api",
-								"admin",
-								"student",
-								"import"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"id": "47645687-58aff347-e814-4d19-843d-5872bbb81fa8"
 		}
 	]
 }
