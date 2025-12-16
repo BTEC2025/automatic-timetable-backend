@@ -1342,10 +1342,44 @@
 								}
 							},
 							"response": []
+						}
+					],
+					"id": "47645687-1661ef87-e879-45d0-a1e6-3cad41713fa7"
+				},
+				{
+					"name": "timeslot",
+					"item": [
+						{
+							"name": "import",
+							"id": "47645687-d0a605e7-ef55-4b92-8088-2e7566f98f58",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/timeslot/import",
+									"protocol": "https",
+									"host": [
+										"automatic-timetable-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"admin",
+										"timeslot",
+										"import"
+									]
+								}
+							},
+							"response": []
 						},
 						{
 							"name": "add-std-group Copy 2",
-							"id": "47645687-b8f286dc-4216-4b00-a7fe-25cceaed860d",
+							"id": "47645687-c7a608aa-65dc-45d4-a0cd-2f262148cbd7",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1398,7 +1432,7 @@
 						},
 						{
 							"name": "delete-std-group Copy 2",
-							"id": "47645687-48044fd4-b3f5-417d-bf97-353e7c238a10",
+							"id": "47645687-b0571821-9546-4cbe-8d82-fb356257646a",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1441,7 +1475,7 @@
 						},
 						{
 							"name": "edit-std-group Copy 2",
-							"id": "47645687-090de3a7-9957-44b0-a077-46071474ee9c",
+							"id": "47645687-e4249260-431f-451f-8c58-7396b28fd2e5",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1495,7 +1529,7 @@
 						},
 						{
 							"name": "get-std-group Copy 2",
-							"id": "47645687-251b1d66-4134-4d5e-9c25-b0e5884ccf94",
+							"id": "47645687-b273a466-33be-457f-aff9-315ac965b410",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1525,40 +1559,6 @@
 										"api",
 										"admin",
 										"student-group"
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"id": "47645687-1661ef87-e879-45d0-a1e6-3cad41713fa7"
-				},
-				{
-					"name": "timeslot",
-					"item": [
-						{
-							"name": "New Request",
-							"id": "47645687-d0a605e7-ef55-4b92-8088-2e7566f98f58",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [],
-								"url": {
-									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/timeslot/import",
-									"protocol": "https",
-									"host": [
-										"automatic-timetable-backend-production",
-										"up",
-										"railway",
-										"app"
-									],
-									"path": [
-										"api",
-										"admin",
-										"timeslot",
-										"import"
 									]
 								}
 							},
