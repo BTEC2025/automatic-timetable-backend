@@ -749,7 +749,7 @@
 							"response": []
 						},
 						{
-							"name": "edit-register Copy",
+							"name": "edit-room",
 							"id": "47645687-c19ce450-6ac4-413c-a090-2f9fe102f83b",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
