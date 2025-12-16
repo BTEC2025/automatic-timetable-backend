@@ -197,10 +197,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"username\": \"Teacher Jay\",\r\n  \"password\": \"t123\",\r\n  \"status\": \"active\"\r\n}\r\n"
+									"raw": "{\r\n  \"username\": \"admin02\",\r\n  \"password\": \"admin123\",\r\n  \"status\": \"active\"\r\n}\r\n"
 								},
 								"url": {
-									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/user?id=6940f8ccb468acd8132194ef",
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/user?id=6940e60290d467a99f3a91b2",
 									"protocol": "https",
 									"host": [
 										"automatic-timetable-backend-production",
@@ -216,7 +216,7 @@
 									"query": [
 										{
 											"key": "id",
-											"value": "6940f8ccb468acd8132194ef"
+											"value": "6940e60290d467a99f3a91b2"
 										}
 									]
 								}
@@ -243,7 +243,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/department",
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/user",
 									"protocol": "https",
 									"host": [
 										"automatic-timetable-backend-production",
@@ -254,7 +254,7 @@
 									"path": [
 										"api",
 										"admin",
-										"department"
+										"user"
 									]
 								}
 							},
