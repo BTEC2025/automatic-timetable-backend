@@ -838,6 +838,62 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "import",
+							"id": "47645687-16286129-8e9e-472f-a206-648eee73914a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{vault:admin02}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"uuid": "00ced72e-6632-4d5b-8bb4-a937b5bcdd47",
+											"src": "/C:/Users/mjannk/Downloads/DATASET-ปวส/CSV/student_group.csv"
+										},
+										{
+											"key": "",
+											"type": "file",
+											"uuid": "0539ec2e-169b-49c8-8e6d-07e92c122979",
+											"value": null,
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/teach/import",
+									"protocol": "https",
+									"host": [
+										"automatic-timetable-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"admin",
+										"teach",
+										"import"
+									]
+								}
+							},
+							"response": []
 						}
 					],
 					"id": "47645687-027ff32c-22a6-4c11-aa6c-7ab1c730cd7e"
