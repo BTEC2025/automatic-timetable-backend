@@ -2105,7 +2105,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/timeslot",
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/constraint",
 									"protocol": "https",
 									"host": [
 										"automatic-timetable-backend-production",
@@ -2116,7 +2116,7 @@
 									"path": [
 										"api",
 										"admin",
-										"timeslot"
+										"constraint"
 									]
 								}
 							},
@@ -2142,7 +2142,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/timeslot?id=",
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/constraint?id=",
 									"protocol": "https",
 									"host": [
 										"automatic-timetable-backend-production",
@@ -2153,7 +2153,7 @@
 									"path": [
 										"api",
 										"admin",
-										"timeslot"
+										"constraint"
 									],
 									"query": [
 										{
@@ -2196,7 +2196,7 @@
 									"raw": "{\r\n  \"department_name\": \"Information Technology\"\r\n}"
 								},
 								"url": {
-									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/timeslot?id=6940f89eb468acd8132194e9",
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/constraint?id=6940f89eb468acd8132194e9",
 									"protocol": "https",
 									"host": [
 										"automatic-timetable-backend-production",
@@ -2207,7 +2207,7 @@
 									"path": [
 										"api",
 										"admin",
-										"timeslot"
+										"constraint"
 									],
 									"query": [
 										{
@@ -2239,7 +2239,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/timeslot",
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/constraint",
 									"protocol": "https",
 									"host": [
 										"automatic-timetable-backend-production",
@@ -2250,7 +2250,7 @@
 									"path": [
 										"api",
 										"admin",
-										"timeslot"
+										"constraint"
 									]
 								}
 							},
