@@ -1378,7 +1378,7 @@
 							"response": []
 						},
 						{
-							"name": "add-std-group Copy 2",
+							"name": "add-timeslot",
 							"id": "47645687-c7a608aa-65dc-45d4-a0cd-2f262148cbd7",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -1431,7 +1431,7 @@
 							"response": []
 						},
 						{
-							"name": "delete-std-group Copy 2",
+							"name": "delete-timeslot",
 							"id": "47645687-b0571821-9546-4cbe-8d82-fb356257646a",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
