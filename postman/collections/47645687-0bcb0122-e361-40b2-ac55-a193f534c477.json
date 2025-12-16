@@ -2015,7 +2015,7 @@
 					"name": "schedule",
 					"item": [
 						{
-							"name": "New Request",
+							"name": "generate",
 							"id": "47645687-6a551387-8304-42a9-98f5-371e434b51c2",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
