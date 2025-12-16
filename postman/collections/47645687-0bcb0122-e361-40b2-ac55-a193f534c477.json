@@ -2266,7 +2266,7 @@
 			"name": "user",
 			"item": [
 				{
-					"name": "get",
+					"name": "get-data",
 					"id": "47645687-b4546991-4ec4-4e58-99fe-cceca5c13ecf",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
