@@ -11,4 +11,4 @@ const RegisterSchema = new Schema({
   subject_id: { type: Schema.Types.ObjectId, ref: 'Subject', required: true },
 });
 
-export default mongoose.model('Register', RegisterSchema) || mongoose.model<IRegister>('Register', RegisterSchema);
+export default mongoose.models.Register || mongoose.model<IRegister>('Register', RegisterSchema);

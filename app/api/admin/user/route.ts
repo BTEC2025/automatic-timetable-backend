@@ -317,6 +317,7 @@ export async function PUT(req: Request) {
         }
 
         const body = await req.json().catch(() => null);
+        
         if (!body) {
             return jsonError("Invalid JSON body", 400);
         }

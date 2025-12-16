@@ -10,4 +10,4 @@ const TeachSchema = new Schema({
   teacher_id: { type: String, ref: 'Teacher', required: true },
   subject_id: { type: String, ref: 'Subject', required: true },
 });
-export default mongoose.model('Teach', TeachSchema);
+export default mongoose.models.Teach || mongoose.model<ITeach>('Teach', TeachSchema);
