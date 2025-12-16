@@ -803,7 +803,7 @@
 							"response": []
 						},
 						{
-							"name": "get-register Copy",
+							"name": "get-room",
 							"id": "47645687-b304725d-75c4-4e08-ae36-d341ad246c17",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
