@@ -2,12 +2,12 @@
 import mongoose, { Schema, Document } from 'mongoose';
 
 export interface ITeach extends Document {
-  teacher_id: mongoose.Types.ObjectId;
-  subject_id: mongoose.Types.ObjectId;
+  teacher_id: string;
+  subject_id: string;
 }
 
 const TeachSchema = new Schema({
-  teacher_id: { type: Schema.Types.ObjectId, ref: 'Teacher', required: true },
-  subject_id: { type: Schema.Types.ObjectId, ref: 'Subject', required: true },
+  teacher_id: { type: String, ref: 'Teacher', required: true },
+  subject_id: { type: String, ref: 'Subject', required: true },
 });
 export default mongoose.model('Teach', TeachSchema);
