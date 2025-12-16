@@ -684,7 +684,7 @@
 									]
 								},
 								"url": {
-									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/teach/import",
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/register/import",
 									"protocol": "https",
 									"host": [
 										"automatic-timetable-backend-production",
@@ -695,7 +695,7 @@
 									"path": [
 										"api",
 										"admin",
-										"teach",
+										"register",
 										"import"
 									]
 								}
@@ -933,7 +933,7 @@
 									]
 								},
 								"url": {
-									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/teach/import",
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/room/import",
 									"protocol": "https",
 									"host": [
 										"automatic-timetable-backend-production",
@@ -944,7 +944,7 @@
 									"path": [
 										"api",
 										"admin",
-										"teach",
+										"room",
 										"import"
 									]
 								}
@@ -1419,7 +1419,7 @@
 											"key": "file",
 											"type": "file",
 											"uuid": "00ced72e-6632-4d5b-8bb4-a937b5bcdd47",
-											"src": "/C:/Users/mjannk/Downloads/DATASET-ปวส/CSV/student_group.csv"
+											"src": "/C:/Users/mjannk/Downloads/DATASET-ปวส/XLSX/subject.xlsx"
 										},
 										{
 											"key": "",
@@ -1431,7 +1431,7 @@
 									]
 								},
 								"url": {
-									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/teach/import",
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/subject/import",
 									"protocol": "https",
 									"host": [
 										"automatic-timetable-backend-production",
@@ -1442,7 +1442,7 @@
 									"path": [
 										"api",
 										"admin",
-										"teach",
+										"subject",
 										"import"
 									]
 								}
@@ -1481,7 +1481,7 @@
 											"key": "file",
 											"type": "file",
 											"uuid": "00ced72e-6632-4d5b-8bb4-a937b5bcdd47",
-											"src": "/C:/Users/mjannk/Downloads/DATASET-ปวส/CSV/student_group.csv"
+											"src": "/C:/Users/mjannk/Downloads/DATASET-ปวส/XLSX/teacher.xlsx"
 										},
 										{
 											"key": "",
@@ -1951,14 +1951,7 @@
 											"key": "file",
 											"type": "file",
 											"uuid": "00ced72e-6632-4d5b-8bb4-a937b5bcdd47",
-											"src": "/C:/Users/mjannk/Downloads/DATASET-ปวส/CSV/student_group.csv"
-										},
-										{
-											"key": "",
-											"type": "file",
-											"uuid": "0539ec2e-169b-49c8-8e6d-07e92c122979",
-											"value": null,
-											"disabled": true
+											"src": "/C:/Users/mjannk/Downloads/DATASET-ปวส/XLSX/teach.xlsx"
 										}
 									]
 								},
@@ -1997,8 +1990,24 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/student/import",
+							"protocol": "https",
+							"host": [
+								"automatic-timetable-backend-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"admin",
+								"student",
+								"import"
+							]
+						}
 					},
 					"response": []
 				}
