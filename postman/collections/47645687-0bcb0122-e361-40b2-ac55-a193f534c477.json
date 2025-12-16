@@ -1571,7 +1571,7 @@
 					"name": "teach",
 					"item": [
 						{
-							"name": "add-std-group Copy",
+							"name": "add-teach",
 							"id": "47645687-65461658-76bf-4aab-aa23-0e24fbf87901",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -1624,7 +1624,7 @@
 							"response": []
 						},
 						{
-							"name": "delete-std-group Copy",
+							"name": "delete-teach",
 							"id": "47645687-eb8e8b72-bad6-49f5-b048-88513018555d",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -1667,7 +1667,7 @@
 							"response": []
 						},
 						{
-							"name": "edit-std-group Copy",
+							"name": "edit-teach",
 							"id": "47645687-06ba8e87-05a5-4e59-b0e3-55c605bff0d6",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
