@@ -1288,14 +1288,58 @@
 					"name": "teacher",
 					"item": [
 						{
-							"name": "New Request",
+							"name": "import",
 							"id": "47645687-6143aa4b-41c1-4b6d-85f8-e1b7572062c5",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
-								"header": []
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{vault:admin02}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"uuid": "00ced72e-6632-4d5b-8bb4-a937b5bcdd47",
+											"src": "/C:/Users/mjannk/Downloads/DATASET-ปวส/CSV/student_group.csv"
+										},
+										{
+											"key": "",
+											"type": "file",
+											"uuid": "0539ec2e-169b-49c8-8e6d-07e92c122979",
+											"value": null,
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/teacher/import",
+									"protocol": "https",
+									"host": [
+										"automatic-timetable-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"admin",
+										"teacher",
+										"import"
+									]
+								}
 							},
 							"response": []
 						}
