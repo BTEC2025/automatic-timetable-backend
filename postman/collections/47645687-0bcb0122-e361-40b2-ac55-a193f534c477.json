@@ -1413,7 +1413,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/student-group",
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/timeslot",
 									"protocol": "https",
 									"host": [
 										"automatic-timetable-backend-production",
@@ -1424,7 +1424,7 @@
 									"path": [
 										"api",
 										"admin",
-										"student-group"
+										"timeslot"
 									]
 								}
 							},
@@ -1450,7 +1450,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/student-group?id=",
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/timeslot?id=",
 									"protocol": "https",
 									"host": [
 										"automatic-timetable-backend-production",
@@ -1461,7 +1461,7 @@
 									"path": [
 										"api",
 										"admin",
-										"student-group"
+										"timeslot"
 									],
 									"query": [
 										{
@@ -1504,7 +1504,7 @@
 									"raw": "{\r\n  \"department_name\": \"Information Technology\"\r\n}"
 								},
 								"url": {
-									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/student-group?id=6940f89eb468acd8132194e9",
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/timeslot?id=6940f89eb468acd8132194e9",
 									"protocol": "https",
 									"host": [
 										"automatic-timetable-backend-production",
@@ -1515,7 +1515,7 @@
 									"path": [
 										"api",
 										"admin",
-										"student-group"
+										"timeslot"
 									],
 									"query": [
 										{
