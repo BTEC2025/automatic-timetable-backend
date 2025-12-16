@@ -647,7 +647,7 @@
 							"response": []
 						},
 						{
-							"name": "import Copy",
+							"name": "import",
 							"id": "47645687-05d3afd6-df14-4bd9-9c81-855c7ff1bbe7",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
