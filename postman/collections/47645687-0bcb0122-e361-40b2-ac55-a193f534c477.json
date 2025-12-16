@@ -1348,7 +1348,20 @@
 				},
 				{
 					"name": "timeslot",
-					"item": [],
+					"item": [
+						{
+							"name": "New Request",
+							"id": "47645687-d0a605e7-ef55-4b92-8088-2e7566f98f58",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					],
 					"id": "47645687-9e45d143-3846-413a-9200-5712370de890"
 				}
 			],
