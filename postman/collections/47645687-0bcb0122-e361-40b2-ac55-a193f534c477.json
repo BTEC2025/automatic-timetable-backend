@@ -1135,7 +1135,7 @@
 							"response": []
 						},
 						{
-							"name": "edit-room Copy",
+							"name": "edit-subject",
 							"id": "47645687-ce19027c-a5be-4a77-9d98-67a520005e9e",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
