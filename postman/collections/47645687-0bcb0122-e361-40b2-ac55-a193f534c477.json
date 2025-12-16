@@ -1382,7 +1382,251 @@
 				},
 				{
 					"name": "teach",
-					"item": [],
+					"item": [
+						{
+							"name": "add-std-group Copy",
+							"id": "47645687-65461658-76bf-4aab-aa23-0e24fbf87901",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{vault:admin02}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"department_name\": \"IT\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/student-group",
+									"protocol": "https",
+									"host": [
+										"automatic-timetable-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"admin",
+										"student-group"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete-std-group Copy",
+							"id": "47645687-eb8e8b72-bad6-49f5-b048-88513018555d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{vault:admin02}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/student-group?id=",
+									"protocol": "https",
+									"host": [
+										"automatic-timetable-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"admin",
+										"student-group"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit-std-group Copy",
+							"id": "47645687-06ba8e87-05a5-4e59-b0e3-55c605bff0d6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{vault:admin02}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"department_name\": \"Information Technology\"\r\n}"
+								},
+								"url": {
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/student-group?id=6940f89eb468acd8132194e9",
+									"protocol": "https",
+									"host": [
+										"automatic-timetable-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"admin",
+										"student-group"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "6940f89eb468acd8132194e9"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get-std-group Copy",
+							"id": "47645687-6929d6c8-487b-47a7-919e-b1b467534a83",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{vault:admin02}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/student-group",
+									"protocol": "https",
+									"host": [
+										"automatic-timetable-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"admin",
+										"student-group"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "import Copy",
+							"id": "47645687-f6ecd3f3-d4d6-40d0-95a7-2de96a916848",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{vault:admin02}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"uuid": "00ced72e-6632-4d5b-8bb4-a937b5bcdd47",
+											"src": "/C:/Users/mjannk/Downloads/DATASET-ปวส/CSV/student_group.csv"
+										},
+										{
+											"key": "",
+											"type": "file",
+											"uuid": "0539ec2e-169b-49c8-8e6d-07e92c122979",
+											"value": null,
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/student-group/import",
+									"protocol": "https",
+									"host": [
+										"automatic-timetable-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"admin",
+										"student-group",
+										"import"
+									]
+								}
+							},
+							"response": []
+						}
+					],
 					"id": "47645687-8f35030f-807a-49b2-a359-c83521a2e441"
 				}
 			],
