@@ -2266,7 +2266,7 @@
 			"name": "user",
 			"item": [
 				{
-					"name": "get-data",
+					"name": "get-user",
 					"id": "47645687-b4546991-4ec4-4e58-99fe-cceca5c13ecf",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -2309,6 +2309,18 @@
 								"user"
 							]
 						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "47645687-c64eee93-9507-42fd-a2ee-92d17eb9325f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
 					},
 					"response": []
 				}
