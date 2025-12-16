@@ -2021,13 +2021,55 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
-								"header": []
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{vault:admin02}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"uuid": "00ced72e-6632-4d5b-8bb4-a937b5bcdd47",
+											"src": "/C:/Users/mjannk/Downloads/DATASET-ปวส/XLSX/teach.xlsx"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/schedule/generate",
+									"protocol": "https",
+									"host": [
+										"automatic-timetable-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"admin",
+										"schedule",
+										"generate"
+									]
+								}
 							},
 							"response": []
 						}
 					],
 					"id": "47645687-f7074a86-5413-4812-8c29-3cba211163ce"
+				},
+				{
+					"name": "New Folder",
+					"item": [],
+					"id": "47645687-d52a753e-68fd-4d38-b7ba-ef51ff6dd425"
 				}
 			],
 			"id": "47645687-db8574ff-a466-40ae-9449-b6726aff1428"
