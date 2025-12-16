@@ -1037,7 +1037,195 @@
 				},
 				{
 					"name": "subject",
-					"item": [],
+					"item": [
+						{
+							"name": "add-room Copy",
+							"id": "47645687-ae65b411-b473-494b-8121-d5aa1ae9ff30",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{vault:admin02}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"department_name\": \"IT\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/room",
+									"protocol": "https",
+									"host": [
+										"automatic-timetable-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"admin",
+										"room"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete-room Copy",
+							"id": "47645687-3af9d799-9523-430f-8dec-ca52377b3e2b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{vault:admin02}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/room?id=6940e9a04a4d9e180b2e0c34",
+									"protocol": "https",
+									"host": [
+										"automatic-timetable-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"admin",
+										"room"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "6940e9a04a4d9e180b2e0c34"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit-room Copy",
+							"id": "47645687-ce19027c-a5be-4a77-9d98-67a520005e9e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{vault:admin02}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"department_name\": \"Information Technology\"\r\n}"
+								},
+								"url": {
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/room?id=6940f89eb468acd8132194e9",
+									"protocol": "https",
+									"host": [
+										"automatic-timetable-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"admin",
+										"room"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "6940f89eb468acd8132194e9"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get-room Copy",
+							"id": "47645687-2a7d2c41-df37-4f3e-92a0-1e3ead964358",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{vault:admin02}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/room",
+									"protocol": "https",
+									"host": [
+										"automatic-timetable-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"admin",
+										"room"
+									]
+								}
+							},
+							"response": []
+						}
+					],
 					"id": "47645687-e5d4a722-bda1-4c9e-af98-5b857c6f04c4"
 				}
 			],
