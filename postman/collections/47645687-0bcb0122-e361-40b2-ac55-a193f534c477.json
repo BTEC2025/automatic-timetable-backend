@@ -653,7 +653,7 @@
 					"name": "room",
 					"item": [
 						{
-							"name": "add-register Copy",
+							"name": "add-room",
 							"id": "47645687-f73217ba-f2e6-4959-bf24-6a48e3194c06",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
