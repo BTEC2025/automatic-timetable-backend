@@ -1721,7 +1721,7 @@
 							"response": []
 						},
 						{
-							"name": "get-std-group Copy",
+							"name": "get-teach",
 							"id": "47645687-6929d6c8-487b-47a7-919e-b1b467534a83",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -1758,7 +1758,7 @@
 							"response": []
 						},
 						{
-							"name": "import Copy",
+							"name": "import",
 							"id": "47645687-f6ecd3f3-d4d6-40d0-95a7-2de96a916848",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
