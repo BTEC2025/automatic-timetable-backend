@@ -1740,7 +1740,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/student-group",
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/teach",
 									"protocol": "https",
 									"host": [
 										"automatic-timetable-backend-production",
@@ -1751,7 +1751,7 @@
 									"path": [
 										"api",
 										"admin",
-										"student-group"
+										"teach"
 									]
 								}
 							},
