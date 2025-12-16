@@ -1,9 +1,9 @@
 // lib/mongodb.ts
 
 import mongoose, { Mongoose } from "mongoose";
-const MONGODB_URL = process.env.MONGODB_URL as string;
+const MONGODB_URI = process.env.MONGODB_URL as string;
 
-if (!MONGODB_URL) {
+if (!MONGODB_URI) {
   throw new Error(
     "Please define the MONGODB_URL environment variable inside .env"
   );
@@ -28,7 +28,7 @@ export default async function dbConnect() {
   if (!cached.promise) {
     const opts = { bufferCommands: false };
 
-    cached.promise = mongoose.connect(MONGODB_URL, opts).then((mongoose) => {
+    cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
       return mongoose;
     });
   }
