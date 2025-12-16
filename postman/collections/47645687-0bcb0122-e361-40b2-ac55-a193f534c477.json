@@ -2261,6 +2261,24 @@
 				}
 			],
 			"id": "47645687-db8574ff-a466-40ae-9449-b6726aff1428"
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "get",
+					"id": "47645687-b4546991-4ec4-4e58-99fe-cceca5c13ecf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "47645687-1f0e0616-999c-4cb5-af91-c45ac03d88da"
 		}
 	]
 }
