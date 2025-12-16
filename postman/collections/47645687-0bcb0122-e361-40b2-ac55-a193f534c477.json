@@ -2272,8 +2272,43 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{vault:admin02}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"uuid": "00ced72e-6632-4d5b-8bb4-a937b5bcdd47",
+									"src": "/C:/Users/mjannk/Downloads/DATASET-ปวส/XLSX/teach.xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://automatic-timetable-backend-production.up.railway.app/api/user",
+							"protocol": "https",
+							"host": [
+								"automatic-timetable-backend-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
 					},
 					"response": []
 				}
