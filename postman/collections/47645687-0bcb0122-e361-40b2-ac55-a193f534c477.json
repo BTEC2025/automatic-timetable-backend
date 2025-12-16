@@ -1991,7 +1991,7 @@
 			"name": "student",
 			"item": [
 				{
-					"name": "New Request",
+					"name": "import",
 					"id": "47645687-24d6f02d-82c5-400b-8641-2cece60b6466",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
