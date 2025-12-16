@@ -1528,7 +1528,7 @@
 							"response": []
 						},
 						{
-							"name": "get-std-group Copy 2",
+							"name": "get-timeslot",
 							"id": "47645687-b273a466-33be-457f-aff9-315ac965b410",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
