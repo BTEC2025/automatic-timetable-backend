@@ -1092,7 +1092,7 @@
 							"response": []
 						},
 						{
-							"name": "delete-room Copy",
+							"name": "delete-subject",
 							"id": "47645687-3af9d799-9523-430f-8dec-ca52377b3e2b",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
