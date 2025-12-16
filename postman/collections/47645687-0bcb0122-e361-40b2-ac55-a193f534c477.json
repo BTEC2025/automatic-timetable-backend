@@ -1606,7 +1606,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/student-group",
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/teach",
 									"protocol": "https",
 									"host": [
 										"automatic-timetable-backend-production",
@@ -1617,7 +1617,7 @@
 									"path": [
 										"api",
 										"admin",
-										"student-group"
+										"teach"
 									]
 								}
 							},
@@ -1643,7 +1643,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/student-group?id=",
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/teach?id=",
 									"protocol": "https",
 									"host": [
 										"automatic-timetable-backend-production",
@@ -1654,7 +1654,7 @@
 									"path": [
 										"api",
 										"admin",
-										"student-group"
+										"teach"
 									],
 									"query": [
 										{
@@ -1697,7 +1697,7 @@
 									"raw": "{\r\n  \"department_name\": \"Information Technology\"\r\n}"
 								},
 								"url": {
-									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/student-group?id=6940f89eb468acd8132194e9",
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/teach?id=6940f89eb468acd8132194e9",
 									"protocol": "https",
 									"host": [
 										"automatic-timetable-backend-production",
@@ -1708,7 +1708,7 @@
 									"path": [
 										"api",
 										"admin",
-										"student-group"
+										"teach"
 									],
 									"query": [
 										{
@@ -1795,7 +1795,7 @@
 									]
 								},
 								"url": {
-									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/student-group/import",
+									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/teach/import",
 									"protocol": "https",
 									"host": [
 										"automatic-timetable-backend-production",
@@ -1806,7 +1806,7 @@
 									"path": [
 										"api",
 										"admin",
-										"student-group",
+										"teach",
 										"import"
 									]
 								}
