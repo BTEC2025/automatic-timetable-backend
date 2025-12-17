@@ -100,7 +100,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"username\": \"teacher.alex\",\r\n  \"password\": \"t123\",\r\n  \"role\": \"teacher\",\r\n  \"teacher\": {\r\n    \"teacher_id\": \"T003\",\r\n    \"teacher_name\": \"Alex Johnson\",\r\n    \"department\": \"6940f890b468acd8132194e6\",\r\n    \"role\": \"teacher\",\r\n    \"max_hours_per_week\": 20\r\n  }\r\n}\r\n",
+									"raw": "{\r\n  \"username\": \"student.alex\",\r\n  \"password\": \"std123\",\r\n  \"role\": \"student\",\r\n  \"student\": {\r\n    \"student_id\": \"STD001\",\r\n    \"student_name\": \"Alex Johnson\",\r\n    \"groupId\": \"69410d7610372dc3c1746d00\"\r\n  }\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -672,14 +672,7 @@
 											"key": "file",
 											"type": "file",
 											"uuid": "00ced72e-6632-4d5b-8bb4-a937b5bcdd47",
-											"src": "/C:/Users/mjannk/Downloads/DATASET-ปวส/CSV/student_group.csv"
-										},
-										{
-											"key": "",
-											"type": "file",
-											"uuid": "0539ec2e-169b-49c8-8e6d-07e92c122979",
-											"value": null,
-											"disabled": true
+											"src": "/C:/Users/mjannk/Downloads/DATASET-ปวส/XLSX/register.xlsx"
 										}
 									]
 								},
@@ -921,7 +914,7 @@
 											"key": "file",
 											"type": "file",
 											"uuid": "00ced72e-6632-4d5b-8bb4-a937b5bcdd47",
-											"src": "/C:/Users/mjannk/Downloads/DATASET-ปวส/CSV/student_group.csv"
+											"src": "/C:/Users/mjannk/Downloads/DATASET-ปวส/XLSX/room.xlsx"
 										},
 										{
 											"key": "",
@@ -1524,8 +1517,29 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{vault:admin02}}",
+											"type": "string"
+										}
+									]
+								},
 								"method": "POST",
 								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"uuid": "90d136d8-635e-4c87-8c93-f49768948083",
+											"src": "/C:/Users/mjannk/Downloads/DATASET-ปวส/XLSX/timeslot.xlsx"
+										}
+									]
+								},
 								"url": {
 									"raw": "https://automatic-timetable-backend-production.up.railway.app/api/admin/timeslot/import",
 									"protocol": "https",
@@ -2097,7 +2111,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"department_name\": \"IT\"\r\n}\r\n",
+									"raw": "{\r\n  \"targetType\": \"teacher\",\r\n  \"targetId\": \"694113c78e8ee7b7c7c0eac6\",\r\n  \"ruleType\": \"BLOCKED_SLOT\",\r\n  \"payload\": {\r\n    \"day\": \"MON\",\r\n    \"slots\": [1],\r\n    \"reason\": \"Weekly department meeting\"\r\n  },\r\n  \"priority\": \"hard\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2319,8 +2333,44 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{vault:admin02}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"uuid": "00ced72e-6632-4d5b-8bb4-a937b5bcdd47",
+									"src": "/C:/Users/mjannk/Downloads/DATASET-ปวส/XLSX/teach.xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://automatic-timetable-backend-production.up.railway.app/api/user/relationships",
+							"protocol": "https",
+							"host": [
+								"automatic-timetable-backend-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"user",
+								"relationships"
+							]
+						}
 					},
 					"response": []
 				}
